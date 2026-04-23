@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wist'upiku — Sucursales Cochabamba</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarina&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sarina&display=swap');
+
+  :root {
+    --marron:    #492e28;
+    --amarillo:  #ffcb05;
+    --naranja:   #f58220;
+    --bg:        #fdf6ec;
+    --card:      #ffffff;
+    --border:    #ede0d0;
+    --muted:     #9a7d6e;
+    --text:      #2a1a14;
+    --wa:        #25D366;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* Cargar Marlide Display y Gill Sans de Google / system */
+  body {
+    background: var(--bg);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 48px;
+    background-image:
+      radial-gradient(ellipse at 10% 0%, rgba(245,130,32,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 100%, rgba(255,203,5,0.10) 0%, transparent 55%);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--marron);
+    padding: 48px 20px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 50%;
+    transform: translateX(-50%);
+    width: 320px; height: 80px;
+    background: var(--bg);
+    border-radius: 50%;
+  }
+
+  /* Decorative arcs */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 40px solid rgba(255,203,5,0.12);
+    pointer-events: none;
+  }
+
+  .logo-ring {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px; height: 72px;
+    background: var(--amarillo);
+    border-radius: 50%;
+    margin-bottom: 18px;
+    position: relative;
+    box-shadow: 0 0 0 6px rgba(255,203,5,0.2), 0 12px 32px rgba(73,46,40,0.4);
+  }
+
+  .logo-ring span {
+    font-family: 'Sarina', cursive;
+    font-size: 1.6rem;
+    color: var(--marron);
+    line-height: 1;
+  }
+
+  h1 {
+    font-family: 'Marlide Display', 'Sarina', cursive;
+    font-size: 2.2rem;
+    color: var(--amarillo);
+    letter-spacing: 1px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+
+  .hero-sub {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255,203,5,0.6);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--naranja);
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 5px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(245,130,32,0.4);
+  }
+
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 32px 16px 0;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* ── CARD ── */
+  .suc-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 18px;
+    padding: 20px 18px 16px;
+    box-shadow: 0 2px 12px rgba(73,46,40,0.06);
+    animation: fadeUp 0.4s ease both;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .suc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--naranja);
+    border-radius: 4px 0 0 4px;
+  }
+
+  .suc-card:hover {
+    box-shadow: 0 6px 24px rgba(73,46,40,0.12);
+    border-color: rgba(245,130,32,0.3);
+  }
+
+  .suc-card.special::before { background: var(--amarillo); }
+  .suc-card.special { border-color: rgba(255,203,5,0.3); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .suc-card:nth-child(1)  { animation-delay: 0.04s }
+  .suc-card:nth-child(2)  { animation-delay: 0.07s }
+  .suc-card:nth-child(3)  { animation-delay: 0.10s }
+  .suc-card:nth-child(4)  { animation-delay: 0.13s }
+  .suc-card:nth-child(5)  { animation-delay: 0.16s }
+  .suc-card:nth-child(6)  { animation-delay: 0.19s }
+  .suc-card:nth-child(7)  { animation-delay: 0.22s }
+  .suc-card:nth-child(8)  { animation-delay: 0.25s }
+  .suc-card:nth-child(9)  { animation-delay: 0.28s }
+  .suc-card:nth-child(10) { animation-delay: 0.31s }
+  .suc-card:nth-child(11) { animation-delay: 0.34s }
+
+  .suc-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding-left: 8px;
+  }
+
+  .suc-num {
+    background: var(--marron);
+    color: var(--amarillo);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    min-width: 30px; height: 30px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  .suc-card.special .suc-num {
+    background: var(--amarillo);
+    color: var(--marron);
+  }
+
+  .suc-name {
+    font-family: 'Marlide Display', 'Sarina', cursive;
+    font-size: 1.05rem;
+    color: var(--marron);
+    line-height: 1.2;
+  }
+
+  .suc-name small {
+    display: block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-weight: 400;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 2px;
+    letter-spacing: 0.03em;
+  }
+
+  .suc-hours {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 14px;
+    padding-left: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    line-height: 1.45;
+  }
+
+  .suc-hours svg {
+    width: 13px; height: 13px;
+    flex-shrink: 0;
+    color: var(--naranja);
+    margin-top: 1px;
+  }
+
+  /* ── BUTTONS ── */
+  .suc-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+
+  .btn-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 11px 6px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: opacity 0.15s, transform 0.12s;
+    border: none; cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .btn-action:active { transform: scale(0.95); opacity: 0.85; }
+  .btn-action svg { width: 18px; height: 18px; }
+
+  .btn-wa {
+    background: rgba(37,211,102,0.1);
+    color: #1a9e50;
+    border: 1.5px solid rgba(37,211,102,0.25);
+  }
+
+  .btn-gps {
+    background: rgba(245,130,32,0.1);
+    color: var(--naranja);
+    border: 1.5px solid rgba(245,130,32,0.25);
+  }
+
+  .btn-tel {
+    background: rgba(73,46,40,0.06);
+    color: var(--marron);
+    border: 1.5px solid rgba(73,46,40,0.15);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 36px 20px 0;
+    font-family: 'Sarina', cursive;
+    font-size: 1rem;
+    color: var(--marron);
+  }
+
+  .footer p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .divider-footer {
+    width: 40px; height: 3px;
+    background: var(--amarillo);
+    border-radius: 2px;
+    margin: 12px auto 14px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo-ring"><span>W</span></div>
+  <h1>Wist'upiku</h1>
+  <p class="hero-sub">Sucursales · Cochabamba</p>
+  <div class="badge">11 sucursales disponibles</div>
+</div>
+
+<div class="grid">
+
+  <!-- 1 -->
+  <div class="suc-card">
+    <div class="suc-top">
+      <div class="suc-num">01</div>
+      <div class="suc-name">Suc. Lanza <small>Central</small></div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Dom: 07:00 – 20:00
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59172228160" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_Lanza" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4503922">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="suc-card">
+    <div class="suc-top">
+      <div class="suc-num">02</div>
+      <div class="suc-name">Suc. Prado</div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Dom: 07:00 – 20:00
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59167401364" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_Prado" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4519330">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="suc-card">
+    <div class="suc-top">
+      <div class="suc-num">03</div>
+      <div class="suc-name">Suc. Ayacucho</div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Sáb: 07:00 – 20:30 · Dom: 07:00 – 20:00
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59172228166" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_Ayacucho" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4582566">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="suc-card">
+    <div class="suc-top">
+      <div class="suc-num">04</div>
+      <div class="suc-name">Suc. Sucre</div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Sáb: 07:00 – 20:00 · Dom: cerrado
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59172228167" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_CSucreCbba" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4256813">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="suc-card">
+    <div class="suc-top">
+      <div class="suc-num">05</div>
+      <div class="suc-name">Suc. Viedma</div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Sáb: 07:00 – 20:00 · Dom: 07:00 – 13:30
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59172223254" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_Viedma" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4531897">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="suc-card">
+    <div class="suc-top">
+      <div class="suc-num">06</div>
+      <div class="suc-name">Suc. América</div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Dom: 07:00 – 20:00
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59172228161" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_América" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4405127">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="suc-card">
+    <div class="suc-top">
+      <div class="suc-num">07</div>
+      <div class="suc-name">Suc. Melchor <small>Frente al IC Norte</small></div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Dom: 07:00 – 21:00
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59172228163" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_Melchor_IcNorte" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4405071">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="suc-card">
+    <div class="suc-top">
+      <div class="suc-num">08</div>
+      <div class="suc-name">Suc. Recoleta</div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Sáb: 07:00 – 21:00 · Dom: 07:00 – 20:00
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59171440290" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_Recoleta" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4401076">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <!-- 9 Aeropuerto -->
+  <div class="suc-card special">
+    <div class="suc-top">
+      <div class="suc-num">09</div>
+      <div class="suc-name">Suc. Aeropuerto ✈️</div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Dom: 05:00 – 22:00
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59172228164" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_Aeropuerto" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4534367">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <!-- 10 Terminal -->
+  <div class="suc-card special">
+    <div class="suc-top">
+      <div class="suc-num">10</div>
+      <div class="suc-name">Suc. Terminal Ayacucho 🚌</div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Dom: 05:30 – 22:00
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59172228174" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_Terminal" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4581208">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <!-- 11 -->
+  <div class="suc-card">
+    <div class="suc-top">
+      <div class="suc-num">11</div>
+      <div class="suc-name">Suc. Sacaba</div>
+    </div>
+    <div class="suc-hours">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Lun a Dom: 07:00 – 20:00
+    </div>
+    <div class="suc-actions">
+      <a class="btn-action btn-wa" href="https://wa.me/59172228175" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-action btn-gps" href="https://bit.ly/Wistu_Sacaba" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver GPS
+      </a>
+      <a class="btn-action btn-tel" href="tel:4704257">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="divider-footer"></div>
+  Wist'upiku
+  <p>Cochabamba · Bolivia</p>
+</div>
+
+</body>
+</html>
