@@ -4,54 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wist'upiku - Sucursales La Paz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
-      background: #fdf6ec;
-      color: #2a1a14;
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-    .card {
-      width: 100%;
-      max-width: 520px;
-      background: #fff;
-      border: 1px solid #ede0d0;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 8px 24px rgba(73, 46, 40, 0.08);
-      text-align: center;
-    }
-    h1 { margin: 0 0 10px; color: #492e28; }
-    p { margin: 0 0 18px; color: #9a7d6e; }
-    .btn {
-      display: inline-block;
-      background: #f58220;
-      color: #fff;
-      text-decoration: none;
-      padding: 11px 18px;
-      border-radius: 10px;
-      font-weight: 700;
-    }
-    .back {
-      display: inline-block;
-      margin-top: 14px;
-      color: #492e28;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
+    :root { --marron:#492e28; --amarillo:#ffcb05; --naranja:#f58220; --bg:#fdf6ec; --card:#fff; --border:#ede0d0; --muted:#9a7d6e; --text:#2a1a14; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); font-family:'Gill Sans','Gill Sans MT',Calibri,sans-serif; color:var(--text); min-height:100vh; padding-bottom:48px; }
+    .hero { background:var(--marron); }
+    .hero img { width:100%; max-height:300px; object-fit:contain; display:block; }
+    .page-heading,.branch-label,.city-section { max-width:580px; margin:14px auto 0; padding:0 16px; }
+    .city-badge { display:inline-block; background:var(--naranja); color:#fff; font-size:.72rem; font-weight:700; text-transform:uppercase; border-radius:999px; padding:6px 14px; margin-bottom:8px; }
+    .page-heading h1,.city-title { font-family:'Sarina',cursive; color:var(--marron); }
+    .page-heading h1 { font-size:1.45rem; margin-bottom:4px; }
+    .page-heading p,.branch-label,.city-note { color:var(--muted); font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; }
+    .branch-label { font-size:.76rem; }
+    .grid { max-width:580px; margin:0 auto; padding:32px 16px 0; display:grid; gap:14px; }
+    .suc-card { background:var(--card); border:1.5px solid var(--border); border-radius:18px; padding:20px 18px 16px; box-shadow:0 2px 12px rgba(73,46,40,.06); position:relative; overflow:hidden; }
+    .suc-card::before { content:''; position:absolute; top:0; left:0; width:4px; height:100%; background:var(--naranja); }
+    .suc-top { display:flex; gap:12px; margin-bottom:10px; padding-left:8px; }
+    .suc-num { background:var(--marron); color:var(--amarillo); min-width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.72rem; }
+    .suc-name { font-family:'Sarina',cursive; color:var(--marron); font-size:1.05rem; line-height:1.2; }
+    .suc-hours { display:flex; gap:7px; color:var(--muted); font-size:.78rem; margin-bottom:14px; padding-left:50px; line-height:1.45; }
+    .suc-hours svg { width:13px; height:13px; color:var(--naranja); flex-shrink:0; margin-top:1px; }
+    .suc-actions { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+    .btn-action { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; padding:11px 6px; border-radius:12px; text-decoration:none; font-size:.68rem; font-weight:600; text-transform:uppercase; }
+    .btn-action::before { content:""; width:18px; height:18px; background-size:contain; background-repeat:no-repeat; background-position:center; }
+    .btn-wa::before { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231a9e50'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z'/%3E%3Cpath d='M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.195-1.624A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.36-.213-3.676.964.981-3.591-.234-.369A9.818 9.818 0 1112 21.818z'/%3E%3C/svg%3E"); }
+    .btn-gps::before { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f58220' stroke-width='2'%3E%3Cpath d='M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E"); }
+    .btn-tel::before { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23492e28' stroke-width='2'%3E%3Cpath d='M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z'/%3E%3C/svg%3E"); }
+    .btn-action svg { width:18px; height:18px; }
+    .btn-wa { background:rgba(37,211,102,.1); color:#1a9e50; border:1.5px solid rgba(37,211,102,.25); }
+    .btn-gps { background:rgba(245,130,32,.1); color:var(--naranja); border:1.5px solid rgba(245,130,32,.25); }
+    .btn-tel { background:rgba(73,46,40,.06); color:var(--marron); border:1.5px solid rgba(73,46,40,.15); }
+    .city-title { font-size:1.2rem; margin-bottom:10px; }
+    .city-note { margin-bottom:14px; }
+    .city-links { display:grid; gap:10px; }
+    .city-link { display:flex; justify-content:space-between; text-decoration:none; color:var(--marron); background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:14px 16px; font-weight:600; font-size:.9rem; }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>SUC La Paz</h1>
-    <p>Revisa el documento oficial de sucursales de La Paz.</p>
-    <a class="btn" href="https://docs.google.com/document/d/1jXpZ9UeH3lZ0ljkOkx4QioqIZOmgFi87FeVRgDwRP30/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Abrir enlace</a>
-    <br>
-    <a class="back" href="./witupiku-sucursales-v2.html">Volver a sucursales</a>
-  </main>
+  <div class="hero"><img src="./img/headeri.png" alt="Wist'upiku"></div>
+  <section class="page-heading"><span class="city-badge">Ciudad</span><h1>La Paz</h1><p>10 sucursales disponibles</p></section>
+  <p class="branch-label">Sucursales de esta ciudad</p>
+  <div class="grid">
+    <div class="suc-card"><div class="suc-top"><div class="suc-num">01</div><div class="suc-name">Suc. Saavedra (Central)</div></div><div class="suc-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun a Vi: 07:30 a 21:30<br>Sab a Dom: 07:30 a 20:00</div><div class="suc-actions"><a class="btn-action btn-wa" href="https://wa.me/59168215531" target="_blank">WhatsApp</a><a class="btn-action btn-gps" href="https://bit.ly/Wistu_Saavedra" target="_blank">Ver GPS</a><a class="btn-action btn-tel" href="tel:+59168215531">Llamar</a></div></div>
+    <div class="suc-card"><div class="suc-top"><div class="suc-num">02</div><div class="suc-name">Suc. Comercio</div></div><div class="suc-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun a Vi: 07:30 a 21:30<br>Sab a Dom: 08:00 a 20:00</div><div class="suc-actions"><a class="btn-action btn-wa" href="https://wa.me/59168215548" target="_blank">WhatsApp</a><a class="btn-action btn-gps" href="https://bit.ly/Wistu_Comercio" target="_blank">Ver GPS</a><a class="btn-action btn-tel" href="tel:+59168215548">Llamar</a></div></div>
+    <div class="suc-card"><div class="suc-top"><div class="suc-num">03</div><div class="suc-name">Suc. 20 de Octubre</div></div><div class="suc-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun a Vi: 07:00 a 21:00<br>Sab a Dom: 08:00 a 19:00</div><div class="suc-actions"><a class="btn-action btn-wa" href="https://wa.me/59168215468" target="_blank">WhatsApp</a><a class="btn-action btn-gps" href="https://bit.ly/Wistu_20deOctubre" target="_blank">Ver GPS</a><a class="btn-action btn-tel" href="tel:+59168215468">Llamar</a></div></div>
+    <div class="suc-card"><div class="suc-top"><div class="suc-num">04</div><div class="suc-name">Suc. Satelite</div></div><div class="suc-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun a Vi: 07:00 a 21:00<br>Sab a Dom: 08:00 a 19:00</div><div class="suc-actions"><a class="btn-action btn-wa" href="https://wa.me/59167347723" target="_blank">WhatsApp</a><a class="btn-action btn-gps" href="https://bit.ly/Wistu_Sat%C3%A9lite" target="_blank">Ver GPS</a><a class="btn-action btn-tel" href="tel:+59167347723">Llamar</a></div></div>
+    <div class="suc-card"><div class="suc-top"><div class="suc-num">05</div><div class="suc-name">Suc. San Miguel</div></div><div class="suc-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun a Vi: 08:00 a 20:30<br>Sab a Dom: 08:00 a 19:00</div><div class="suc-actions"><a class="btn-action btn-wa" href="https://wa.me/59168215613" target="_blank">WhatsApp</a><a class="btn-action btn-gps" href="https://bit.ly/Wistu_SanMiguel" target="_blank">Ver GPS</a><a class="btn-action btn-tel" href="tel:+59168215613">Llamar</a></div></div>
+    <div class="suc-card"><div class="suc-top"><div class="suc-num">06</div><div class="suc-name">Suc. Montenegro</div></div><div class="suc-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun a Vi: 08:00 a 20:30<br>Sab a Dom: 08:30 a 19:00</div><div class="suc-actions"><a class="btn-action btn-wa" href="https://wa.me/59177500833" target="_blank">WhatsApp</a><a class="btn-action btn-gps" href="https://bit.ly/Wistu_Montenegro" target="_blank">Ver GPS</a><a class="btn-action btn-tel" href="tel:+59177500833">Llamar</a></div></div>
+    <div class="suc-card"><div class="suc-top"><div class="suc-num">07</div><div class="suc-name">Suc. Prado LP</div></div><div class="suc-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun a Vi: 07:00 a 21:30<br>Sab a Dom: 08:00 a 19:00</div><div class="suc-actions"><a class="btn-action btn-wa" href="https://wa.me/59168175227" target="_blank">WhatsApp</a><a class="btn-action btn-gps" href="https://bit.ly/Wistu_PradoLP" target="_blank">Ver GPS</a><a class="btn-action btn-tel" href="tel:+59168175227">Llamar</a></div></div>
+    <div class="suc-card"><div class="suc-top"><div class="suc-num">08</div><div class="suc-name">Suc. Loayza</div></div><div class="suc-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun a Vi: 07:00 a 20:30<br>Sab: 08:00 a 19:00<br>Dom: 08:00 a 13:00</div><div class="suc-actions"><a class="btn-action btn-wa" href="https://wa.me/59168215496" target="_blank">WhatsApp</a><a class="btn-action btn-gps" href="https://bit.ly/Wistu_Loayza" target="_blank">Ver GPS</a><a class="btn-action btn-tel" href="tel:+59168215496">Llamar</a></div></div>
+    <div class="suc-card"><div class="suc-top"><div class="suc-num">09</div><div class="suc-name">Suc. Terminal LP</div></div><div class="suc-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun a Vi: 07:00 a 21:30<br>Sab a Dom: 08:30 a 21:30</div><div class="suc-actions"><a class="btn-action btn-wa" href="https://wa.me/59167404542" target="_blank">WhatsApp</a><a class="btn-action btn-gps" href="https://bit.ly/Wistu_Terminal_LP" target="_blank">Ver GPS</a><a class="btn-action btn-tel" href="tel:+59167404542">Llamar</a></div></div>
+    <div class="suc-card"><div class="suc-top"><div class="suc-num">10</div><div class="suc-name">Suc. Aeropuerto LP</div></div><div class="suc-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun a Sab: 05:00 a 21:00<br>Sab a Dom: 05:30 a 20:30</div><div class="suc-actions"><a class="btn-action btn-wa" href="https://wa.me/59171525281" target="_blank">WhatsApp</a><a class="btn-action btn-gps" href="https://bit.ly/Wistu_Aeropuerto_LP" target="_blank">Ver GPS</a><a class="btn-action btn-tel" href="tel:+59171525281">Llamar</a></div></div>
+  </div>
+  <section class="city-section"><h2 class="city-title">Cambiar ciudad</h2><p class="city-note">Cada ciudad tiene su propia pagina con enlace independiente.</p><div class="city-links"><a class="city-link" href="./sucursales-cochabamba.html">Ciudad: Cochabamba <span>Entrar</span></a><a class="city-link" href="./sucursales-la-paz.html">Ciudad: La Paz <span>Actual</span></a><a class="city-link" href="./sucursales-santa-cruz.html">Ciudad: Santa Cruz <span>Entrar</span></a><a class="city-link" href="./sucursales-sucre.html">Ciudad: Sucre <span>Entrar</span></a></div></section>
 </body>
 </html>
