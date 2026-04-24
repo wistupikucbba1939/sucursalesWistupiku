@@ -305,6 +305,52 @@
     border-radius: 2px;
     margin: 12px auto 14px;
   }
+
+  .city-section {
+    max-width: 580px;
+    margin: 28px auto 0;
+    padding: 0 16px;
+  }
+
+  .city-title {
+    font-family: 'Marlide Display', 'Sarina', cursive;
+    font-size: 1.2rem;
+    color: var(--marron);
+    margin-bottom: 10px;
+  }
+
+  .city-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+  }
+
+  .city-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .city-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--marron);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .city-link:hover {
+    border-color: rgba(245,130,32,0.3);
+    box-shadow: 0 6px 24px rgba(73,46,40,0.08);
+  }
 </style>
 </head>
 <body>
@@ -605,6 +651,16 @@
   </div>
 
 </div>
+
+<section class="city-section">
+  <h2 class="city-title">Sucursales por ciudad</h2>
+  <p class="city-note">Cada ciudad tiene su propia pagina con enlace independiente.</p>
+  <div class="city-links">
+    <a class="city-link" href="./sucursales-la-paz.html">SUC La Paz <span>Ver pagina</span></a>
+    <a class="city-link" href="./sucursales-santa-cruz.html">SUC Santa Cruz <span>Ver pagina</span></a>
+    <a class="city-link" href="./sucursales-sucre.html">SUC Sucre <span>Ver pagina</span></a>
+  </div>
+</section>
 
 <div class="footer">
   <div class="divider-footer"></div>
