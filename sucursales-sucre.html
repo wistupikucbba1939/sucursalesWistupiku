@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wist'upiku - Sucursales Sucre</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
   <style>
+    @font-face { font-family:'Marlide Display'; src:url('./font/MarlideDisplay-Regular-TRIAL.otf') format('opentype'); font-weight:400; font-style:normal; font-display:swap; }
     :root { --marron:#492e28; --amarillo:#ffcb05; --naranja:#f58220; --bg:#fdf6ec; --card:#fff; --border:#ede0d0; --muted:#9a7d6e; --text:#2a1a14; }
     * { box-sizing:border-box; margin:0; padding:0; }
     body { background:var(--bg); font-family:'Gill Sans','Gill Sans MT',Calibri,sans-serif; color:var(--text); min-height:100vh; padding-bottom:48px; }
@@ -13,8 +13,8 @@
     .hero img { width:100%; max-height:300px; object-fit:contain; display:block; }
     .page-heading,.branch-label,.city-section { max-width:580px; margin:14px auto 0; padding:0 16px; }
     .city-badge { display:inline-block; background:var(--naranja); color:#fff; font-size:.72rem; font-weight:700; text-transform:uppercase; border-radius:999px; padding:6px 14px; margin-bottom:8px; }
-    .page-heading h1,.city-title { font-family:'Sarina',cursive; color:var(--marron); }
-    .page-heading h1 { font-size:1.45rem; margin-bottom:4px; }
+    .page-heading h1,.city-title { font-family:'Marlide Display',serif; color:var(--marron); }
+    .page-heading h1 { font-size:1.78rem; margin-bottom:4px; }
     .page-heading p,.branch-label,.city-note { color:var(--muted); font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; }
     .branch-label { font-size:.76rem; }
     .grid { max-width:580px; margin:0 auto; padding:32px 16px 0; display:grid; gap:14px; }
@@ -22,7 +22,7 @@
     .suc-card::before { content:''; position:absolute; top:0; left:0; width:4px; height:100%; background:var(--naranja); }
     .suc-top { display:flex; gap:12px; margin-bottom:10px; padding-left:8px; }
     .suc-num { background:var(--marron); color:var(--amarillo); min-width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.72rem; }
-    .suc-name { font-family:'Sarina',cursive; color:var(--marron); font-size:1.05rem; line-height:1.2; }
+    .suc-name { font-family:'Marlide Display',serif; color:var(--marron); font-size:1.3rem; line-height:1.2; }
     .suc-hours { display:flex; gap:7px; color:var(--muted); font-size:.78rem; margin-bottom:14px; padding-left:50px; line-height:1.45; }
     .suc-hours svg { width:13px; height:13px; color:var(--naranja); flex-shrink:0; margin-top:1px; }
     .suc-actions { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
@@ -34,7 +34,7 @@
     .btn-wa { background:rgba(37,211,102,.1); color:#1a9e50; border:1.5px solid rgba(37,211,102,.25); }
     .btn-gps { background:rgba(245,130,32,.1); color:var(--naranja); border:1.5px solid rgba(245,130,32,.25); }
     .btn-tel { background:rgba(73,46,40,.06); color:var(--marron); border:1.5px solid rgba(73,46,40,.15); }
-    .city-title { font-size:1.2rem; margin-bottom:10px; }
+    .city-title { font-size:1.48rem; margin-bottom:10px; }
     .city-note { margin-bottom:14px; }
     .city-links { display:grid; gap:10px; }
     .city-link { display:flex; justify-content:space-between; text-decoration:none; color:var(--marron); background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:14px 16px; font-weight:600; font-size:.9rem; }
